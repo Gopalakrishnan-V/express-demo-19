@@ -1,10 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { auth} = require("./middlewares/Auth");
+const { auth } = require("./middlewares/Auth");
 
 const app = express();
 const port = process.env.port || 9000;
-
 
 const student = {
   name: "Gopal",
@@ -15,7 +14,7 @@ const student = {
 // const company = student.company;
 // const age = student.age;
 
-const {name, age} = student;
+const { name, age } = student;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,8 +32,6 @@ app.get("/songs/:songId", auth, (req, res) => {
   //   console.log("req.query", req.query);
   //Request Body
   //   console.log("req.body", req.body);
-
-  return view.create - tasks();
 
   if (req.params.songId === "abcd") {
     return res
