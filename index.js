@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const { auth } = require("./middlewares/Auth");
 
 const app = express();
-const port = process.env.port || 9000;
+const PORT = process.env.PORT || 9000;
 
 const student = {
   name: "Gopal",
@@ -41,6 +41,6 @@ app.get("/songs/:songId", auth, (req, res) => {
   res.send({ message: "Song " + req.params.songId + " will start soon" });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
